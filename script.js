@@ -17,9 +17,6 @@ for (let i = 0; i < 16; i++) {
   container[0].appendChild(row);
 }
 
-const gridItems = document.getElementsByClassName('grid-item');
-const rows = document.getElementsByClassName('row');
-
 // A function to remove the old grid 
 // and replace it with a new one that
 // uses takes the user input for the size
@@ -30,7 +27,7 @@ function newGrid() {
 
   newGridSize = prompt('Enter The Desired Grid Size To A Max Of 100');
   
-
+  // Used to remove the old array
   for (let i = 0; i < rowsArray.length; i++) {
     rowsArray[i].remove();
   };
@@ -39,8 +36,8 @@ function newGrid() {
 
   for (let i = 0; i < newGridSize; i++) {
 
-    if (newGridSize > 100) {
-      alert('Size too big');
+    if (newGridSize > 100) { // used to limit the gird size
+      alert('Size too big'); 
       break;
     }
 
