@@ -10,9 +10,50 @@ for (let i = 0; i < 16; i++) {
     let div = document.createElement('div');
     div.classList.add(`grid-item`);
     div.addEventListener("mouseover", () => {
-      div.style.backgroundColor = 'lightblue';
+      div.style.backgroundColor = 'aqua';
     });
     row.appendChild(div);
   }
   container[0].appendChild(row);
+}
+
+const gridItems = document.getElementsByClassName('grid-item');
+const rows = document.getElementsByClassName('row');
+
+// A function to remove the old grid 
+// and replace it with a new one that
+// uses takes the user input for the size
+ 
+
+function newGrid() {
+  const rowsArray = Array.from(document.getElementsByClassName('row'));
+
+  newGridSize = prompt('Enter The Desired Grid Size To A Max Of 100');
+  
+
+  for (let i = 0; i < rowsArray.length; i++) {
+    rowsArray[i].remove();
+  };
+
+
+
+  for (let i = 0; i < newGridSize; i++) {
+
+    if (newGridSize > 100) {
+      alert('Size too big');
+      break;
+    }
+
+    let row = document.createElement('div');
+    row.classList.add(`row`);
+    for (let i = 0; i < newGridSize; i++) {
+      let div = document.createElement('div');
+      div.classList.add(`grid-item`);
+      div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = 'aqua';
+      });
+      row.appendChild(div);
+    }
+    container[0].appendChild(row);
+  }
 }
